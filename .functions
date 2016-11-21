@@ -234,3 +234,15 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# `chr` with no arguments opens Chrome with secuity turned off on port 8080
+# otherwise opens the given port & context
+# chr 8080/bar   # opens on port 8080/bar
+# chr 9090 #opens on port 9090
+function chr() {
+	if [ $# -eq 0 ]; then
+		open -a Google\ Chrome --args --ignore-certificate-errors --disable-web-secuity --user-data-dir=/tmp/chr --incognito http://localhost:8080
+	else
+		open -a Google\ Chrome --args --ignore-certificate-errors --disable-web-secuity --user-data-dir=/tmp/chr --incognito http://localhost:$1
+	fi;
+}
