@@ -241,8 +241,8 @@ function tre() {
 # chr 9090 #opens on port 9090
 function chr() {
 	if [ $# -eq 0 ]; then
-		open -a Google\ Chrome --args --ignore-certificate-errors --disable-web-secuity --user-data-dir=/tmp/chr --incognito http://localhost:8080
+		open -a Google\ Chrome --args --ignore-certificate-errors --disable-web-security --user-data-dir=/tmp/chr --incognito http://localhost:8080
 	else
-		open -a Google\ Chrome --args --ignore-certificate-errors --disable-web-secuity --user-data-dir=/tmp/chr --incognito http://localhost:$1
+		open -a Google\ Chrome --args --ignore-certificate-errors --disable-web-security --user-data-dir=/tmp/chr --incognito http://localhost:$1
 	fi;
 }
